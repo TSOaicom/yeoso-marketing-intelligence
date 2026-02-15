@@ -31,15 +31,15 @@ export const defaultSettings: AppSettings = {
   allowExt: [".mp3", ".wav", ".m4a", ".txt", ".pdf", ".docx"],
   maxFileMB: 100,
   thresholds: { high: 80, medium: 60 },
-  analysisEngine: "mock",
+  analysisEngine: "coze",
   coze: {
-    apiBaseUrl: "",
+    apiBaseUrl: import.meta.env.VITE_COZE_API_BASE_URL || "https://api.coze.com",
     analysisWebhookUrl: "",
     analysisWebhookAuthHeader: "",
-    pat: "",
-    intentAgentId: "",
-    keywordAgentId: "",
-    strategyAgentId: "",
+    pat: import.meta.env.VITE_COZE_PAT || "",
+    intentAgentId: import.meta.env.VITE_COZE_AGENT_ID || "",
+    keywordAgentId: import.meta.env.VITE_COZE_AGENT_ID || "",
+    strategyAgentId: import.meta.env.VITE_COZE_AGENT_ID || "",
   },
 };
 

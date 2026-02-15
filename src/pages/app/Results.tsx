@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "wouter";
+import { Link, type RouteComponentProps } from "wouter";
 import { toast } from "sonner";
 import JSZip from "jszip";
 
@@ -56,7 +56,7 @@ function toCsv(rows: Record<string, unknown>[]) {
   return `${header}\n${body}`;
 }
 
-export default function Results({ params }: { params?: { id?: string } }) {
+export default function Results({ params }: RouteComponentProps<{ id?: string }>) {
   const { lang } = useI18n();
   const { jobs, deleteJob } = useData();
   const settings = getSettings();
